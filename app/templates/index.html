@@ -2,3 +2,31 @@
 {% block styling %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static/styles/css/index.css')}}"/>
 {% endblock %}
+{% block content %}
+    <h1>Santa's Coming to Towne</h1>
+    <p>
+        Welcome to our gift matcher app. Based on data collected from twitter feeds,
+        we will be able to help you find the perfect gift for your (👧,👨,👴,❤️) on their (🎂,🎄,🎓, 💒).
+    </p>
+    <section id="add-target">
+        <form class="" action="/add" method="POST">
+            Twitter Handle: <input type="text" name="Twitter-Handle" value="">
+            Lower Price Range: <input type="number" name="Lower-Price" min="0" value="">
+            Upper Price Range: <input type="number" name="Upper-Price" min="0" value="">
+            <input type="submit" name="" value="Submit">
+        </form>
+    </section>
+    <section id="target-list">
+        <ul>
+            {% for person in people %}
+            <li>
+                <div class="person">
+                    <a href="https://twitter.com/{{ person.twitter }}">{{ person.twitter }}</a>
+                    <p>Lower Price Bracket: {{ person.lower_price }}</p>
+                    <p>Higher Price Bracket: {{ person.upper_price }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
