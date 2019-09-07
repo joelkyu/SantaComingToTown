@@ -39,3 +39,7 @@ def get_comparison(person_id):
         if c > 0:
             compatible[person.twitter] = c
     return jsonify(compatible)
+
+
+if __name__ == '__main__':
+    app.run(host="52.54.115.82", port=8080)
