@@ -76,6 +76,14 @@ def extract_adj(text):
     return adj
 
 
+def extract_k(tweets, text):
+    k = 0
+    for tweet in tweets:
+        if text in tweet.split(' '):
+            k += 1
+    return k
+
+
 if __name__ == '__main__':
     print(extract_positives(senti_analysis('I love pizza so so so much.'), 0.5, 0.5))
     print(extract_adj("OMG THIS SWEATER IS SO FLUFFY."))

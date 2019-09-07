@@ -4,7 +4,7 @@
 (function () {
     var itemNames = document.getElementsByClassName("a-size-base-plus a-color-base a-text-normal");
     var itemPricesWhole = document.getElementsByClassName("a-price-whole");
-    var itemPricesFraction = document.getElementsByClassName("a-price-fraction");   
+    var itemPricesFraction = document.getElementsByClassName("a-price-fraction");
 
     var itemArray = []
 
@@ -14,9 +14,9 @@
 
     return itemArray
 
-    // Test Function 
-    // var testItem = {name: itemNames[0].textContent,price: parseFloat(itemPricesWhole[0].textContent + itemPricesFraction[0].textContent)};
-    // console.log(testItem.name)
-    // console.log(testItem.price)
+    // Test Function
+    var testItem = {name: itemNames[0].textContent,price: parseFloat(itemPricesWhole[0].textContent + itemPricesFraction[0].textContent)};
+    console.log(testItem.name)
+    console.log(testItem.price)
 
 })();
