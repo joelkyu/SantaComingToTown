@@ -14,6 +14,7 @@ class Person(db.Model):
     facebook = db.Column(db.String(50), unique=True)
     lower_price = db.Column(db.Float(precision=2), nullable=True)
     upper_price = db.Column(db.Float(precision=2), nullable=False)
+    # date until event
 
     def load_user_sentiment(self):
         self.tweets = tt.recentTweets(self.twitter)

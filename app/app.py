@@ -14,11 +14,11 @@ def index():
 
 @app.route('/add', methods=['POST'])
 def add_person():
-    lp = request.header['Lower-Price']
-    hp = request.header['Upper-Price']
+    lp = request.headers['Lower-Price']
+    hp = request.headers['Upper-Price']
     if hp < lp:
         lp, hp = hp, lp  # switch variables if user inputs wrong price bracket.
-    p = Person(twitter=request.header['Twitter-Handle'], lower_price=lp, upper_price=hp)
+    p = Person(twitter=request.headers['Twitter-Handle'], lower_price=lp, upper_price=hp)
     db.session.add(p)
     db.session.commit()
     return jsonify([p.deserialize() for p in Person.query.all()])
@@ -31,14 +31,16 @@ def get_person(person_id):
 
 @app.route('/compare/<int:person_id>', methods=['GET'])
 def get_comparison(person_id):
-    description = request.header['name']
-    price = request.header['price']
+    description = request.headers['name']
+    price = request.headers['price']
     compatible = {}
     for person in Person.query.all():
         c = person.compatibility(description, price)
         if c > 0:
             compatible[person.twitter] = c
     return jsonify(compatible)
+
+# delete method
 
 
 if __name__ == '__main__':
