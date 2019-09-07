@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Santa'sComingtoTowne",
     "description": "A web application that utilizes APIs to analyze a user's social media to determine an ideal gift.TOHacks hack that tracks emission usage based on route and mode of transport. Created with love by Nancy Ngo, Joe Yu, Nigel Thomas Roy and Gloria Li.",
-    "version": "0.1",
+    "version": "0.2",
     "browser_action": {
         "default_popup": "towne.html",
         "default_icon": "assets/images/present.PNG"
@@ -10,15 +10,19 @@
     "permissions": [
         "activeTab",
         "webRequest",
-        "notifications"
+        "notifications",
+        "storage"
     ],
     "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                "https://www.amazon.ca/*"
             ],
             "js": [
                 "scripts.js"
+            ],
+            "css": [
+                "highlightItems.css"
             ]
         }
     ],
