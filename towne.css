@@ -1,30 +1,32 @@
-body {
-    background: #DCDCDC;
-    width: 700px;
-    font-family: "Oswald", sans-serif;
-    overflow: hidden
-}
-
-h1 {
-    font-family: , sans-serif;
-    font-weight: 600;
-    text-align: center;
-}
-
-/* h1
- {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
-  text-align: center } */
-
+  text-align: center }
 
 p,
 a,
 form {
   font-family: 'Oswald', sans-serif;
-  font-weight: 400;
-  padding: 5px, 5px, 5px;
-}
+  font-weight: 400; }
+
+header {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 3em;
+  text-align: center }
+  header h1 {
+    font-size: 60px; }
+  header p {
+    font-size: 26px; }
+  @media screen and (min-width: 700px) {
+    header {
+      width: 700px; } }
 
 main {
   text-align: center;
@@ -33,10 +35,9 @@ main {
     flex: 50%;
     text-align: center; }
   main .form {
-    display: inline-block;
-     }
+    display: block; }
   main input {
-    display: inline-block;
+    display: block;
     width: 200px; }
   main input[type=text] {
     border: 2px solid red;
