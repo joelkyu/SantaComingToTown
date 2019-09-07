@@ -7,6 +7,7 @@ import os
 
 @app.route('/')
 def index():
+    db.create_all()
     return jsonify([p.deserialize() for p in Person.query.all()])  # Initiate all objects
 
 

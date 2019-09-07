@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+    build:
+        commands:
+            - echo Build started on `date`
+            - echo Compiling Python...
+            - pip install -r requirements.txt
+        post_build:
+            commands:
+                - echo Build completed on `date`
+artifacts:
+  files:
+    - app/app.py
+    - app/auth.json
+    - app/config.py
+    - app/models.py
+    - app/senti.py
+    - app/tweet.py
+    - requirements.txt
