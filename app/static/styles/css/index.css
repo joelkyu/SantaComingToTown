@@ -5,7 +5,8 @@ h4,
 h5,
 h6 {
   font-family: 'Oswald', sans-serif;
-  font-weight: 600; }
+  font-weight: 600;
+  text-align: center }
 
 p,
 a,

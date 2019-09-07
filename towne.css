@@ -1,45 +1,58 @@
-body {
-    background:#fff;
-    width: 400px;
-    font-family: "Viga", sans-serif;
-    overflow: hidden;
-}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-align: center }
 
-.header {
-    font-size: 35px;
-    height: 55px;
-    text-align: center;
-}
+p,
+a,
+form {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400; }
 
-.header-left {
-    float: left;
-}
+header {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 3em;
+  text-align: center }
+  header h1 {
+    font-size: 60px; }
+  header p {
+    font-size: 26px; }
+  @media screen and (min-width: 700px) {
+    header {
+      width: 700px; } }
 
-.header-right {
-    float: right;
-}
+main {
+  text-align: center;
+  display: flex; }
+  main section {
+    flex: 50%;
+    text-align: center; }
+  main .form {
+    display: block; }
+  main input {
+    display: block;
+    width: 200px; }
+  main input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px; }
+  main input[type=number] {
+    border: 2px solid blue;
+    border-radius: 4px; }
+  main ul {
+    list-style-type: none; }
+    main ul li div {
+      padding-bottom: 10px; }
+      main ul li div a {
+        font-size: 20px; }
+      main ul li div p {
+        margin: 0;
+        font-size: 12; }
 
-.info {
-    font-size: 20px;
-    line-height: 24px;
-}
-
-hr {
-    height: 0px;
-    width: 300px;
-    align-content: center;
-    border-bottom: 2px #000 solid;
-}
-
-.choosing {
-    text-align: center;
-}
-
-.hidden-metric {
-    visibility: hidden;
-    display: none;
-}
-
-.sub-display-block {
-    text-align: center;
-}
+/*# sourceMappingURL=index.css.map */

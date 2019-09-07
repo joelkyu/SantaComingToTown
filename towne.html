@@ -3,27 +3,45 @@
 
 <head>
     <meta charset="utf-8">
-    <title id="start">Santa'sComingtoTowne</title>
+    <title id="start">Santa!</title>
 
-    <link rel="stylesheet" href="css/towne.css">
-    <link href="https://fonts.googleapis.com/css?family=Viga|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="towne.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600&display=swap" rel="stylesheet">
 </head>
+<h1>Santa 🎅</h1>
+<p>
+    Welcome to our gift matcher app. Based on data collected from twitter feeds,
+    we will be able to help you find the perfect gift for your (👧,👨,👴,❤️) on their (🎂,🎄,🎓, 💒).
+</p>
 
 <body>
-    <div class="container" id="startingPoint">
-        <header>
-            <div class="header">
-                <div class="header-left">Santa'sComingToTown</div>
+    <section id="add-target">
+        <form class="" action="/add" method="POST">
+            <div class="form">
+                Twitter Handle: <input type="text" name="Twitter-Handle" value="">
             </div>
-        </header>
-
-        <main>
-            <div class="info">
-                
+            <div class="form">
+                Lower Price Range: <input type="number" name="Lower-Price" min="0" value="">
             </div>
-        </main>
-    </div>
-
+            <div class="form">
+                Upper Price Range: <input type="number" name="Upper-Price" min="0" value="">
+            </div>
+            <input type="submit" name="" value="Submit">
+        </form>
+    </section>
+    <section id="target-list">
+        <!-- <ul>
+            {% for person in people %}
+            <li>
+                <div class="person">
+                    <a href="https://twitter.com/{{ person.twitter }}">{{ person.twitter }}</a>
+                    <p>Lower Price Bracket: ${{ person.lower_price }}</p>
+                    <p>Higher Price Bracket: ${{ person.upper_price }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul> -->
+    </section>
     <script src="scripts.js"></script>
 </body>
 
