@@ -1,8 +1,12 @@
 # Imports the Google Cloud client library
+import os
 from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 
+
+# Set environmental variable to local OAuth2.0 file
+os.putenv("GOOGLE_APPLICATION_CREDENTIALS", "auth.json")
 
 # Instantiates a client
 client = language.LanguageServiceClient()
@@ -65,7 +69,7 @@ def extract_adj(text):
     response = client.analyze_syntax(document, encoding_type='UTF32')
     adj = []
     for token in response.tokens:
-        print(type(token.part_of_speech))
+        # print(type(token.part_of_speech))
         if enums.PartOfSpeech.Tag(token.part_of_speech.tag).name == "ADJ":
             adj.append(token.text.content)
 
@@ -73,5 +77,5 @@ def extract_adj(text):
 
 
 if __name__ == '__main__':
-    # print(extract_positives(senti_analysis('Mom said jogging wasn\'t very fun!'), -1, 0))
+    print(extract_positives(senti_analysis('I love pizza so so so much.'), 0.5, 0.5))
     print(extract_adj("OMG THIS SWEATER IS SO FLUFFY."))
