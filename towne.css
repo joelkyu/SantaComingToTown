@@ -15,11 +15,29 @@ h1 {
     color: white;
 }
 
+p1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+}
+
+.pad {
+    height: 0.5em;
+}
+
+.addtoleft {
+    margin-left: 5em;
+}
+
 p,
-a,
+a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+}
+
 form {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
+    align-content: center;
 }
 
 header {
@@ -81,8 +99,9 @@ main input[type=text] {
 }
 
 .btn:hover {
-    color: #f8ab41;
-    background-color: black;
+    /*    color: rgba(255, 0, 0, 0.52);*/
+    color: #c2312f;
+    background-color: white;
     opacity: 0.8;
 }
 
@@ -97,7 +116,7 @@ main input[type=text] {
 
 
 .btn-primary-outline:hover {
-    color: white;
+    color: #c2312f;
     background-color: indigo;
     border-color: indigo;
 }
@@ -108,27 +127,28 @@ main input[type=text] {
     padding: 12em 1em;
     text-align: center;
 }*/
-.app_79z645 {
-    width: 375px
+
+.inputarea {
+    align-content: center;
 }
 
 .btn {
     font-size: 1rem;
     letter-spacing: .1em;
-    line-height: 2em;
+    line-height: 0.2em;
     border-radius: 1em;
     align-content: center;
-    margin-left: 1em;
+    margin-left: 0.1em;
     /*    top:1.8 right:3.6 bottom 1.8 left3.6*/
     /*    the size of button*/
     padding: 1em 2em;
     color: white;
-    background: rgb(255, 0, 0);
+    background: #c2312f;
     border: none;
 }
 
 .john {
-    background-color: rgba(255, 0, 0, 0.52);
+    background-color: #c2312f;
 }
 
 .fullthing {
