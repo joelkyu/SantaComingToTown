@@ -1,5 +1,6 @@
 # Imports the Google Cloud client library
 from google.cloud import language
+import json
 from google.cloud.language import enums
 from google.cloud.language import types
 
@@ -31,23 +32,25 @@ def senti_analysis(text: str):
     )
     sentiment = client.analyze_entity_sentiment(
         document=document,
-        encoding_type='UTF32',
+        encoding_type='UTF16',
     )
     return sentiment.entities
 
 
-def extract_positives(dict, alpha):
+def extract_positives(dict, alpha, beta):
     """
     Takes in API result from the sentimental analysis, spits out COMMON nouns
-    that have a positive significance above a certain `alpha`.
+    that have a positive significance above a certain `alpha`. The significance
+    must also be greater than beta.
     """
     words = []
-    for entry in dict[:len(dict)-1]:
-        if entry['mentions']['sentiment']['score'] > alpha and
-           entry['mentions']['type'] == 'COMMON':
-           words.append(entry['name'])
+    for entry in range(len(dict) - 1):
+        if dict[entry].sentiment.score > alpha and dict[entry].sentiment.magnitude > beta:
+            if dict[entry].mentions.type == "COMMON":
+                words.append(dict[entry].name)
     return words
-    
+
 
 if __name__ == '__main__':
-    print(senti_analysis('Mom said jogging wasn\'t very fun!'))
+    dict = senti_analysis('I hate jogging!')
+    print(extract_positives(dict, alpha=-1, beta=0.1))
