@@ -1,5 +1,6 @@
 # Imports the Google Cloud client library
 import os
+import math
 from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
@@ -41,7 +42,7 @@ def senti_analysis(text: str):
     return sentiment.entities
 
 
-def extract_positives(dict, alpha, beta):
+def extract_positives(dict):
     """
     Takes in API result from the sentimental analysis, spits out COMMON nouns
     that have a positive significance above a certain `alpha`. The significance
@@ -49,11 +50,8 @@ def extract_positives(dict, alpha, beta):
     """
     words = []
     for entry in range(len(dict)):
-        print(dict[entry].mentions[0].type)
-        print('________________\n')
-        if dict[entry].sentiment.score > alpha and dict[entry].sentiment.magnitude > beta:
-            if dict[entry].mentions[0].type == 2:
-                words.append(dict[entry].name)
+        words.append((dict[entry].name, dict[entry].sentiment.score, dict[entry].sentiment.magnitude))
+        # α = sentiment score, β = sentiment magnitude
     # TODO: extract adjectives if the sentence is generally positive.
     # Sometimes it is the adjective that they are more attracted to compared
     # to the actual prodct.
@@ -84,6 +82,25 @@ def extract_k(tweets, text):
     return k
 
 
-if __name__ == '__main__':
-    print(extract_positives(senti_analysis('I love pizza so so so much.'), 0.5, 0.5))
-    print(extract_adj("OMG THIS SWEATER IS SO FLUFFY."))
+def caculate_keyword_vector(tweets, keywords):
+    v = []
+    for word in keywords:
+        k = extract_k(tweets, word[0])
+        a = word[1]
+        b = word[2]
+        v.append(
+            {
+                word[0]: 0.5 * b * (a + 1) * ((math.exp(k) - 1) / (1 + math.exp(k)))
+            }
+        )
+
+
+def price_weighting(s: float, price: float, p_min: float, p_max: float):
+    u_diff = p_max - price
+    l_diff = price - p_min
+    if u_diff < 0:
+        return 0 if s - 0.05(u_diff)**2 < 0 else s - 0.05(u_diff)**2
+    elif l_diff < 0:
+        return 0 if s - 0.05(l_diff)**2 < 0 else s - 0.05(l_diff)**2
+    else:
+        return s
