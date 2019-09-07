@@ -1,58 +1,181 @@
-h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 600;
-  text-align: center }
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    text-align: center
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+p1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+}
+
+.pad {
+    height: 0.5em;
+}
+
+.addtoleft {
+    margin-left: 5em;
+}
 
 p,
-a,
+a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+}
+
 form {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 400; }
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    align-content: center;
+}
 
 header {
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 3em;
-  text-align: center }
-  header h1 {
-    font-size: 60px; }
-  header p {
-    font-size: 26px; }
-  @media screen and (min-width: 700px) {
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 3em;
+    text-align: center
+}
+
+header h1 {
+    font-size: 60px;
+}
+
+header p {
+    font-size: 26px;
+}
+
+@media screen and (min-width: 700px) {
     header {
-      width: 700px; } }
+        width: 700px;
+    }
+}
+
+.pop {
+    height: 10px;
+}
+
+.cmu {
+    /*background-color: red*/
+}
+
+.submit {
+    align-content: center;
+}
 
 main {
-  text-align: center;
-  display: flex; }
-  main section {
+    text-align: center;
+    display: flex;
+}
+
+main section {
     flex: 50%;
-    text-align: center; }
-  main .form {
-    display: block; }
-  main input {
+    text-align: center;
+}
+
+main .form {
     display: block;
-    width: 200px; }
-  main input[type=text] {
+}
+
+main input {
+    display: block;
+    width: 200px;
+}
+
+main input[type=text] {
     border: 2px solid red;
-    border-radius: 4px; }
-  main input[type=number] {
+    border-radius: 4px;
+}
+
+.btn:hover {
+    /*    color: rgba(255, 0, 0, 0.52);*/
+    color: #c2312f;
+    background-color: white;
+    opacity: 0.8;
+}
+
+/*outline button style*/
+.btn-primary-outline {
+    border-radius: 2em;
+    color: indigo;
+    background-color: transparent;
+    border: 1px indigo solid;
+    transition: all 0.5s;
+}
+
+
+.btn-primary-outline:hover {
+    color: #c2312f;
+    background-color: indigo;
+    border-color: indigo;
+}
+
+/*.view {
+    background: url(../img/header_bg.jpeg) center center no-repeat;
+    /*    12 em for the top and bottom padding
+    padding: 12em 1em;
+    text-align: center;
+}*/
+
+.inputarea {
+    align-content: center;
+}
+
+.btn {
+    font-size: 1rem;
+    letter-spacing: .1em;
+    line-height: 0.2em;
+    border-radius: 1em;
+    align-content: center;
+    margin-left: 0.1em;
+    /*    top:1.8 right:3.6 bottom 1.8 left3.6*/
+    /*    the size of button*/
+    padding: 1em 2em;
+    color: white;
+    background: #c2312f;
+    border: none;
+}
+
+.john {
+    background-color: #c2312f;
+}
+
+.fullthing {
+    width: 300px;
+    border-radius: 1em;
+}
+
+/*main input[type=number] {
     border: 2px solid blue;
-    border-radius: 4px; }
-  main ul {
-    list-style-type: none; }
-    main ul li div {
-      padding-bottom: 10px; }
-      main ul li div a {
-        font-size: 20px; }
-      main ul li div p {
-        margin: 0;
-        font-size: 12; }
+    border-radius: 4px;
+}
+
+main ul {
+    list-style-type: none;
+}
+
+main ul li div {
+    padding-bottom: 10px;
+}
+
+main ul li div a {
+    font-size: 20px;
+}
+
+main ul li div p {
+    margin: 0;
+    font-size: 12;
+}*/
 
 /*# sourceMappingURL=index.css.map */
