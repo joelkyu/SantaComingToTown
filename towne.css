@@ -1,0 +1,45 @@
+body {
+    background:#fff;
+    width: 400px;
+    font-family: "Viga", sans-serif;
+    overflow: hidden;
+}
+
+.header {
+    font-size: 35px;
+    height: 55px;
+    text-align: center;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-right {
+    float: right;
+}
+
+.info {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+hr {
+    height: 0px;
+    width: 300px;
+    align-content: center;
+    border-bottom: 2px #000 solid;
+}
+
+.choosing {
+    text-align: center;
+}
+
+.hidden-metric {
+    visibility: hidden;
+    display: none;
+}
+
+.sub-display-block {
+    text-align: center;
+}
