@@ -56,5 +56,22 @@ def extract_positives(dict, alpha, beta):
     return words
 
 
+def extract_adj(text):
+    document = {
+        "content": text,
+        "type": 'PLAIN_TEXT',
+        "language": 'en'
+    }
+    response = client.analyze_syntax(document, encoding_type='UTF32')
+    adj = []
+    for token in response.tokens:
+        print(type(token.part_of_speech))
+        if enums.PartOfSpeech.Tag(token.part_of_speech.tag).name == "ADJ":
+            adj.append(token.text.content)
+
+    return adj
+
+
 if __name__ == '__main__':
-    print(extract_positives(senti_analysis('Mom said jogging wasn\'t very fun!'), -1, 0))
+    # print(extract_positives(senti_analysis('Mom said jogging wasn\'t very fun!'), -1, 0))
+    print(extract_adj("OMG THIS SWEATER IS SO FLUFFY."))
