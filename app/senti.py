@@ -84,7 +84,7 @@ def extract_k(tweets, text):
 
 def caculate_keyword_vector(tweets, keywords):
     v = []
-    for word in keywords:
+    for word in keywords[0]:
         k = extract_k(tweets, word[0])
         a = word[1]
         b = word[2]

@@ -7,8 +7,8 @@ import os
 
 @app.route('/')
 def index():
-    db.create_all()  # Initiate all objects
-    return render_template('index.html')
+    return jsonify([p.deserialize() for p in Person.query.all()])  # Initiate all objects
+
 
 
 @app.route('/add', methods=['POST'])
@@ -20,12 +20,12 @@ def add_person():
     p = Person(twitter=request.header['Twitter-Handle'], lower_price=lp, upper_price=hp)
     db.session.add(p)
     db.session.commit()
-    return jsonify(Person.query.all())
+    return jsonify([p.deserialize() for p in Person.query.all()])
 
 
 @app.route('/person/<int:person_id>', methods=['GET'])
 def get_person(person_id):
-    return jsonify(Person.query.get(person_id))
+    return jsonify(Person.query.get(person_id).deserialize())
 
 
 @app.route('/compare/<int:person_id>', methods=['GET'])

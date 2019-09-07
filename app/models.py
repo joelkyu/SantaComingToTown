@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from config import app
-import tweet
+import tweet as tt
 import senti
 
 
@@ -16,10 +16,10 @@ class Person(db.Model):
     upper_price = db.Column(db.Float(precision=2), nullable=False)
 
     def load_user_sentiment(self):
-        self.tweets = tweet.recentTweets(self.twitter)
+        self.tweets = tt.recentTweets(self.twitter)
         self.keywords = []
         for tweet in self.tweets:
-            keywords.append(senti.extract_positives(senti.senti_analysis(tweet)))
+            self.keywords.append(senti.extract_positives(senti.senti_analysis(tweet)))
         self.kv = senti.caculate_keyword_vector(self.tweets, self.keywords)
 
     def compatibility(self, compare_title, compare_price):
@@ -33,6 +33,23 @@ class Person(db.Model):
         if len(strength_sum) == 0:
             return 0
         return sum(strength_sum) / len(strength_sum)
+
+    def deserialize(self):
+        self.load_user_sentiment()
+        return {
+            "id": self.id,
+            "twitter": self.twitter,
+            "instagram": self.instagram,
+            "facebook": self.facebook,
+            "lower_price": self.lower_price,
+            "upper_price": self.upper_price,
+            "keywords": self.keywords,
+            "tweets": self.tweets,
+            "keyword-vector": self.kv,
+        }
+
+    def __repr__(self):
+        return f'<{self.twitter}>'
 
 
 class Characteristic(db.Model):
