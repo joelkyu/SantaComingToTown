@@ -1,6 +1,5 @@
 # Imports the Google Cloud client library
 from google.cloud import language
-import json
 from google.cloud.language import enums
 from google.cloud.language import types
 
@@ -32,8 +31,9 @@ def senti_analysis(text: str):
     )
     sentiment = client.analyze_entity_sentiment(
         document=document,
-        encoding_type='UTF16',
+        encoding_type='UTF32',
     )
+    # print(sentiment.entities)
     return sentiment.entities
 
 
@@ -44,13 +44,17 @@ def extract_positives(dict, alpha, beta):
     must also be greater than beta.
     """
     words = []
-    for entry in range(len(dict) - 1):
+    for entry in range(len(dict)):
+        print(dict[entry].mentions[0].type)
+        print('________________\n')
         if dict[entry].sentiment.score > alpha and dict[entry].sentiment.magnitude > beta:
-            if dict[entry].mentions.type == "COMMON":
+            if dict[entry].mentions[0].type == 2:
                 words.append(dict[entry].name)
+    # TODO: extract adjectives if the sentence is generally positive.
+    # Sometimes it is the adjective that they are more attracted to compared
+    # to the actual prodct.
     return words
 
 
 if __name__ == '__main__':
-    dict = senti_analysis('I hate jogging!')
-    print(extract_positives(dict, alpha=-1, beta=0.1))
+    print(extract_positives(senti_analysis('Mom said jogging wasn\'t very fun!'), -1, 0))
