@@ -1,45 +1,57 @@
 body {
-    background:#fff;
-    width: 400px;
-    font-family: "Viga", sans-serif;
-    overflow: hidden;
+    background: #DCDCDC;
+    width: 700px;
+    font-family: "Oswald", sans-serif;
+    overflow: hidden
 }
 
-.header {
-    font-size: 35px;
-    height: 55px;
+h1 {
+    font-family: , sans-serif;
+    font-weight: 600;
     text-align: center;
 }
 
-.header-left {
-    float: left;
+/* h1
+ {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-align: center } */
+
+
+p,
+a,
+form {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  padding: 5px, 5px, 5px;
 }
 
-.header-right {
-    float: right;
-}
+main {
+  text-align: center;
+  display: flex; }
+  main section {
+    flex: 50%;
+    text-align: center; }
+  main .form {
+    display: inline-block;
+     }
+  main input {
+    display: inline-block;
+    width: 200px; }
+  main input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px; }
+  main input[type=number] {
+    border: 2px solid blue;
+    border-radius: 4px; }
+  main ul {
+    list-style-type: none; }
+    main ul li div {
+      padding-bottom: 10px; }
+      main ul li div a {
+        font-size: 20px; }
+      main ul li div p {
+        margin: 0;
+        font-size: 12; }
 
-.info {
-    font-size: 20px;
-    line-height: 24px;
-}
-
-hr {
-    height: 0px;
-    width: 300px;
-    align-content: center;
-    border-bottom: 2px #000 solid;
-}
-
-.choosing {
-    text-align: center;
-}
-
-.hidden-metric {
-    visibility: hidden;
-    display: none;
-}
-
-.sub-display-block {
-    text-align: center;
-}
+/*# sourceMappingURL=index.css.map */
