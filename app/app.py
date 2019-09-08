@@ -43,6 +43,7 @@ def get_comparison(person_id):
     price = request.headers['price']
     compatible = {}
     for person in Person.query.all():
+        person.load_user_sentiment()
         c = person.compatibility(description, price)
         if c > 0:
             compatible[person.twitter] = c

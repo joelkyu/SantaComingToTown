@@ -17,7 +17,15 @@ class Person(db.Model):
     # date until event
 
     def load_user_sentiment(self):
-        self.tweets = tt.recentTweets(self.twitter)
+        self.tweets = [
+    "Give me the new Ipad",
+    "I love the new Ipad",
+    "Contrary to popular belief, my shinny nose reflects, not emits, light. I suck at travelling in foggy conditions",
+    "Man, I'm shivering. Should of gotten a better sleeping bag :/",
+    "Been up for over 20 hours! Those AWAKE chocolates are some good stuff",
+    "One slice of pizza is nowhere near enough to power Santa's sleds.",
+    "Cereal before milk is a fax."
+]
         self.keywords = []
         for tweet in self.tweets:
             self.keywords.append(senti.extract_positives(senti.senti_analysis(tweet)))
@@ -25,7 +33,6 @@ class Person(db.Model):
 
 
     def compatibility(self, compare_title, compare_price):
-        self.load_user_sentiment()
         strength_sum = []
         for i in range(len(self.keywords[0])):
             if self.keywords[0][i][0].lower() in compare_title.lower():

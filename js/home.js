@@ -25,7 +25,7 @@ for (i=0; i<ids.length; i++) {
                     score = propValue
                 }
             }
-            results.append({
+            results.push({
                 id: ids[i],
                 score: score
             })
