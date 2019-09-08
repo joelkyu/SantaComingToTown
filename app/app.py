@@ -8,8 +8,8 @@ import os
 @app.route('/')
 def index():
     db.create_all()
-    db.session.add(Person(twitter="Alan", lower_price=5, upper_price=10))
-    db.session.commit()
+
+    
     return jsonify([p.deserialize() for p in Person.query.all()])  # Initiate all objects
 
 
@@ -47,4 +47,4 @@ def get_comparison(person_id):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=8080)
