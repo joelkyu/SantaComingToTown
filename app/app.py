@@ -14,6 +14,7 @@ def index():
 
 @app.route('/add', methods=['POST'])
 def add_person():
+    db.create_all()
     lp = request.headers['Lower-Price']
     hp = request.headers['Upper-Price']
     if hp < lp:
@@ -44,4 +45,4 @@ def get_comparison(person_id):
 
 
 if __name__ == '__main__':
-    app.run(host="52.54.115.82", port=8080)
+    app.run(host="0.0.0.0", port=8080, debug=True)
