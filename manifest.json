@@ -22,7 +22,9 @@
             "js": [
                 "js/jquery-3.4.1.min.js",
                 "js/scripts.js",
-                "js/updateFollowers.js"
+                "js/api.js",
+                "js/home.js",
+                "js/followers.js"
             ],
             "css": [
                 "styles/css/highlightItems.css"
@@ -31,5 +33,6 @@
     ],
     "web_accessible_resources": [
         "scripts.js"
-    ]
+    ],
+    "run_at": "document_end"
 }
