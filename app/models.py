@@ -21,18 +21,19 @@ class Person(db.Model):
         self.keywords = []
         for tweet in self.tweets:
             self.keywords.append(senti.extract_positives(senti.senti_analysis(tweet)))
-        self.kv = senti.caculate_keyword_vector(self.tweets, self.keywords)
+        self.kv = senti.caculate_keyword_vector(self.tweets, self.keywords[0])
+
 
     def compatibility(self, compare_title, compare_price):
-        count = 0
+        self.load_user_sentiment()
         strength_sum = []
-        for keyword in range(len(self.keywords)):
-            if self.keywords[keyword] in compare_title:
-                count += 1
-                strength_sum.append(senti.price_weighting(self.kv[keyword], compare_price,
+        for i in range(len(self.keywords[0])):
+            if self.keywords[0][i][0].lower() in compare_title.lower():
+                strength_sum.append(senti.price_weighting(list(self.kv[i].values())[0], compare_price,
                 self.lower_price, self.upper_price))
         if len(strength_sum) == 0:
             return 0
+        print(strength_sum)
         return sum(strength_sum) / len(strength_sum)
 
     def deserialize(self):

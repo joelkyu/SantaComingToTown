@@ -8,8 +8,8 @@ import os
 @app.route('/')
 def index():
     db.create_all()
-    db.session.add(Person(twitter="Alan", lower_price=5, upper_price=10))
-    db.session.commit()
+
+    
     return jsonify([p.deserialize() for p in Person.query.all()])  # Initiate all objects
 
 
@@ -17,8 +17,8 @@ def index():
 @app.route('/add', methods=['POST'])
 def add_person():
     db.create_all()
-    lp = request.headers['Lower-Price']
-    hp = request.headers['Upper-Price']
+    lp = float(request.headers['Lower-Price'])
+    hp = float(request.headers['Upper-Price'])
     if hp < lp:
         lp, hp = hp, lp  # switch variables if user inputs wrong price bracket.
     p = Person(twitter=request.headers['Twitter-Handle'], lower_price=lp, upper_price=hp)
@@ -43,8 +43,13 @@ def get_comparison(person_id):
             compatible[person.twitter] = c
     return jsonify(compatible)
 
-# delete method
+
+@app.route('/delete/<int:person_id>', methods=['POST'])
+def delete_target(person_id):
+    db.session.delete(Person.query.get(person_id))
+    db.session.commit()
+    return jsonify([p.deserialize() for p in Person.query.all()])
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=8080)
