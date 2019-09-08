@@ -11,7 +11,6 @@ h6 {
 h1 {
     padding-top: 0.15em;
     font-family: 'Lobster', cursive;
-    font-weight: 600;
     text-align: center;
     color: white;
 }
@@ -30,7 +29,7 @@ p3 {
 }
 
 .addtoleft {
-    margin-left: 0.1em;
+    margin-left: 5.7em;
 }
 
 p,
@@ -152,6 +151,44 @@ main input[type=text] {
     border: none;
 }
 
+.btn2 {
+    font-size: 1rem;
+    letter-spacing: .1em;
+    line-height: 0.2em;
+    border-radius: 0.5em;
+    align-content: center;
+    margin-left: 0.1em;
+    /*    top:1.8 right:3.6 bottom 1.8 left3.6*/
+    /*    the size of button*/
+    padding: 0.8em 0.9em;
+    color: white;
+    background: #c2312f;
+    border: none;
+}
+
+.btn2:hover {
+    /*    color: rgba(255, 0, 0, 0.52);*/
+    color: white;
+    background-color: #00B32C;
+    opacity: 0.8;
+}
+
+/*outline button style*/
+.btn2-primary-outline {
+    border-radius: 2em;
+    color: indigo;
+    background-color: transparent;
+    border: 1px indigo solid;
+    transition: all 0.5s;
+}
+
+
+.btn2-primary-outline:hover {
+    color: #c2312f;
+    background-color: indigo;
+    border-color: indigo;
+}
+
 .john {
     background-color: #c2312f;
 }
@@ -159,7 +196,6 @@ main input[type=text] {
 .fullthing {
     width: 300px;
     border-radius: 1em;
-    background-color: aqua;
 }
 
 /*main input[type=number] {
