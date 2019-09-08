@@ -43,7 +43,12 @@ def get_comparison(person_id):
             compatible[person.twitter] = c
     return jsonify(compatible)
 
-# delete method
+
+@app.route('/delete/<int:person_id>', methods=['POST'])
+def delete_target(person_id):
+    db.session.delete(Person.query.get(person_id))
+    db.session.commit()
+    return jsonify([p.deserialize() for p in Person.query.all()])
 
 
 if __name__ == '__main__':
