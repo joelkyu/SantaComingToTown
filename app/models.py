@@ -26,10 +26,10 @@ class Person(db.Model):
     def compatibility(self, compare_title, compare_price):
         count = 0
         strength_sum = []
-        for keyword in range(len(self.keywords)):
-            if self.keywords[keyword] in compare_title:
+        for i in range(len(self.keywords)):
+            if self.keywords[i] in compare_title:
                 count += 1
-                strength_sum.append(senti.price_weighting(self.kv[keyword], compare_price,
+                strength_sum.append(senti.price_weighting(self.kv[i], compare_price,
                 self.lower_price, self.upper_price))
         if len(strength_sum) == 0:
             return 0
