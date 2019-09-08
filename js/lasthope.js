@@ -3,7 +3,7 @@
 
 for (i=0; i<results.length; i++) {
     let color = '';
-    if (results[i].score >= 0.5) {
+    if (results[i].score <= 0.5) {
         color = '#4dff4d';
         document.getElementById(results[i].id).setAttribute('style', 'background-color: #4DFF4D')
     }
