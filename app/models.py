@@ -26,7 +26,7 @@ class Person(db.Model):
     def compatibility(self, compare_title, compare_price):
         self.load_user_sentiment()
         strength_sum = []
-        for i in range(len(self.keywords)):
+        for i in range(len(self.keywords[0])):
             if self.keywords[i][0] in compare_title:
                 strength_sum.append(senti.price_weighting(self.kv[i], compare_price,
                 self.lower_price, self.upper_price))
