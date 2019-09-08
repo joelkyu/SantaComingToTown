@@ -83,7 +83,8 @@
     <link rel="stylesheet" type="text/css" href="towne.css" />
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-
+    <script type="text/javascript" src="js/updateFollowers.js">
+    </script>
 
 </head>
 <div class="view" id="view">
@@ -114,7 +115,7 @@
                             <div class="row">
                                 <div class="inputarea col-lg-12">
                                     <section id="add-target">
-                                        <form class="" action="/add" method="POST">
+                                        <form class="" onSubmit="Javascript:handleClick()" method="POST">
                                             <div class="form">
                                                 <p1>Twitter Handle </p1><input type="text" name="Twitter-Handle" value="">
                                             </div>
@@ -140,7 +141,7 @@
 -->
                                             <!--                                                    <div class="addtoleft">-->
                                             <p3>|</p3>
-                                            <input class="btn" type="submit" name="" value="Submit">
+                                            <input class="btn" type="submit" name="" value="Submit" onClick="JavaScript:handleClick()">
                                             <!--                                                    </div>-->
                                             <!--                                                </div>-->
                                             <!--
@@ -174,7 +175,7 @@
             {% endfor %}
         </ul> -->
                         </section>
-                        <script src="scripts.js"></script>
+                        <script src="js/scripts.js"></script>
                     </body>
                 </div>
 
