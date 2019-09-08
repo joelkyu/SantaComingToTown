@@ -1,5 +1,5 @@
 function indexPage () {
-    fetch(`http://52.54.115.82:8080/`, {method: "GET",})
+    fetch(`http://52.54.115.82:8080`, {method: "GET"})
     .then(
         function(response) {
         if (response.status !== 200) {
@@ -8,7 +8,9 @@ function indexPage () {
             return;
         }
         // Examine the text in the response
+        console.log(response);
         response.json().then(function(data) {
+
             return data
         });
         }
@@ -19,7 +21,7 @@ function indexPage () {
 }
 
 function add_person(twitter_handle, lower_price, upper_price) {
-    fetch(`http://52.54.115.82:8080/`, {
+    fetch(`http://52.54.115.82:8080/add`, {
         method: "POST",
         headers: {
             "accept": 'application/json',
