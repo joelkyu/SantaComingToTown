@@ -5,7 +5,7 @@
     "version": "0.3",
     "browser_action": {
         "default_popup": "towne.html",
-        "default_icon": "assets/images/present.PNG"
+        "default_icon": "assets/images/presentv3.png"
     },
     "permissions": [
         "activeTab",

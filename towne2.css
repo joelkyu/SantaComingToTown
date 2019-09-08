@@ -159,6 +159,7 @@ main input[type=text] {
 .fullthing {
     width: 300px;
     border-radius: 1em;
+    background-color: aqua;
 }
 
 /*main input[type=number] {
