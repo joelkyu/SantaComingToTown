@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 from config import app
 from models import db, Person, Characteristic
 import os
@@ -9,7 +10,7 @@ import os
 def index():
     db.create_all()
 
-    
+
     return jsonify([p.deserialize() for p in Person.query.all()])  # Initiate all objects
 
 

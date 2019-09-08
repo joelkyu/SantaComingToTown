@@ -15,5 +15,4 @@
     console.log(itemArray);
 
     return itemArray;
-
 })();

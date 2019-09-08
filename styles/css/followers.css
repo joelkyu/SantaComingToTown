@@ -1,0 +1,24 @@
+header h1 {
+  font-size: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px; }
+
+main #followers_list {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding-inline-start: 0px;
+  text-align: center;
+  justify-content: flex-start;
+  list-style: none; }
+  main #followers_list p {
+    display: inline-block; }
+  main #followers_list span {
+    display: inline-block;
+    color: #2d9c4b; }
+  main #followers_list button {
+    display: inline-block; }
+
+button {
+  color: white; }
+
+/*# sourceMappingURL=followers.css.map */

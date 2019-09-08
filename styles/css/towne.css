@@ -1,0 +1,125 @@
+body {
+  width: 300px; }
+
+h1
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lobster', cursive;
+  font-weight: 600;
+  text-align: center; }
+
+p,
+a {
+  margin: 5px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 16px; }
+
+form {
+  font-family: 'Oswald', sans-serif;
+  align-content: center; }
+  form input {
+    align-content: center; }
+  form p {
+    font-weight: 500; }
+
+header {
+  text-align: center;
+  margin: 0 auto;
+  text-align: center; }
+  header h1 {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    font-size: 45px;
+    color: white;
+    background-color: #c2312f;
+    width: 100%; }
+
+main {
+  marign: 5px;
+  margin-bottom: 1em;
+  text-align: center;
+  display: flex; }
+  main section {
+    flex: 50%;
+    text-align: center; }
+    main section input[type=text] {
+      border: 2px solid #c2312f;
+      border-radius: 6px; }
+    main section input[type=number] {
+      border: 2px solid #2d9c4b;
+      border-radius: 6px; }
+
+.btn {
+  font-size: 1rem;
+  letter-spacing: .1em;
+  line-height: 0.2em;
+  border-radius: 1em;
+  align-content: center;
+  margin-left: 0.1em;
+  /*    top:1.8 right:3.6 bottom 1.8 left3.6*/
+  /*    the size of button*/
+  padding: 1em 2em;
+  color: white;
+  background: #c2312f;
+  border: none; }
+
+.btn:hover {
+  /*    color: rgba(255, 0, 0, 0.52);*/
+  color: white;
+  background-color: #00B32C;
+  opacity: 0.8; }
+
+/*outline button style*/
+.btn-primary-outline {
+  border-radius: 2em;
+  color: indigo;
+  background-color: transparent;
+  border: 1px indigo solid;
+  transition: all 0.5s; }
+
+.btn-primary-outline:hover {
+  color: #c2312f;
+  background-color: indigo;
+  border-color: indigo; }
+
+.btn2 {
+  font-size: 1rem;
+  letter-spacing: .1em;
+  line-height: 0.2em;
+  border-radius: 1em;
+  align-content: center;
+  margin-left: 0.1em;
+  /*    top:1.8 right:3.6 bottom 1.8 left3.6*/
+  /*    the size of button*/
+  padding: .1em .2em;
+  color: white;
+  background: #c2312f;
+  border: none; }
+
+.btn2:hover {
+  /*    color: rgba(255, 0, 0, 0.52);*/
+  color: white;
+  background-color: #00B32C;
+  opacity: 0.8; }
+
+/*outline button style*/
+.btn2-primary-outline {
+  border-radius: 2em;
+  color: indigo;
+  background-color: transparent;
+  border: 1px indigo solid;
+  transition: all 0.5s; }
+
+.btn2-primary-outline:hover {
+  color: #c2312f;
+  background-color: indigo;
+  border-color: indigo; }
+
+.john {
+  background-color: #c2312f; }
+
+/*# sourceMappingURL=towne.css.map */
