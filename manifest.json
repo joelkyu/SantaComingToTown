@@ -24,7 +24,8 @@
                 "js/scripts.js",
                 "js/api.js",
                 "js/home.js",
-                "js/followers.js"
+                "js/followers.js",
+                "js/lasthope.js"
             ],
             "css": [
                 "styles/css/highlightItems.css"
@@ -32,6 +33,7 @@
         }
     ],
     "web_accessible_resources": [
-        "scripts.js"
+        "scripts.js",
+        "lasthope.js"
     ]
 }
