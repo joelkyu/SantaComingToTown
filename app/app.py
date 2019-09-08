@@ -1,9 +1,13 @@
+import os 
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "auth.json" 
+
 from flask import Flask, render_template, request, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from config import app
 from models import db, Person, Characteristic
-import os
+
 
 
 @app.route('/')
