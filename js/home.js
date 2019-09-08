@@ -1,10 +1,38 @@
-[{id: 1, score: 0.2}, {id: 2, score: 0.5}, {id: 3, score: 1}]
+var results = []
 
-
-for (i=0; i<results.length; i++) {
-    let color = '';
-    if (results[i].score >= 0.5) {
-        color = '#4dff4d';
-        document.getElementById(results[i].id).setAttribute('style', 'background-color: #4DFF4D')
-    }
+for (i=0; i<ids.length; i++) {
+    fetch(`http://52.54.115.82:8080/compare/${ids[i]}`, {
+        method: "GET",
+        headers: {
+            "accept": 'application/json',
+            'name': names[i],
+            'price': prices[i]
+        }
+    })
+    .then(
+        function(response) {
+        if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+            return;
+        }
+        // Examine the text in the response
+        response.json().then(function(data) {
+            var score = 0
+            for(var propName in data) {
+                if(data.hasOwnProperty(propName)) {
+                    var propValue = data[propName];
+                    score = propValue
+                }
+            }
+            results.append({
+                id: ids[i],
+                score: score
+            })
+        });
+        }
+    )
+    .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+    });
 }
