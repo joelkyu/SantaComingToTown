@@ -24,6 +24,7 @@ class Person(db.Model):
         self.kv = senti.caculate_keyword_vector(self.tweets, self.keywords)
 
     def compatibility(self, compare_title, compare_price):
+        self.load_user_sentiment()
         count = 0
         strength_sum = []
         for i in range(len(self.keywords)):
