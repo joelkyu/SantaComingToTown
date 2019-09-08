@@ -1,3 +1,12 @@
+$theme-red: #c2312f;
+$theme-green: #2d9c4b;
+
+
+body {
+    width: 300px;
+}
+
+h1
 h2,
 h3,
 h4,
@@ -8,112 +17,62 @@ h6 {
     text-align: center
 }
 
-h1 {
-    padding-top: 0.15em;
-    font-family: 'Lobster', cursive;
-    text-align: center;
-    color: white;
-}
 
-p1 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
-}
-
-p3 {
-    color: white;
-}
-
-.pad {
-    height: 0.5em;
-}
-
-.addtoleft {
-    margin-left: 0.1em;
-}
 
 p,
 a {
+    margin: 5px;
     font-family: 'Oswald', sans-serif;
-    font-weight: 200;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 form {
     font-family: 'Oswald', sans-serif;
-    font-weight: 400;
     align-content: center;
-}
-
-header {
-    width: 100px;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 3em;
-    text-align: center
-}
-
-header h1 {
-    font-size: 60px;
-}
-
-header p {
-    font-size: 26px;
-}
-
-@media screen and (min-width: 700px) {
-    header {
-        width: 700px;
+    input {
+        align-content: center;
+    }
+    p {
+        font-weight: 500;
     }
 }
 
-.pop {
-    height: 10px;
+header {
+    text-align: center;
+    margin: 0 auto;
+    text-align: center;
+    h1 {
+        font-family: 'Lobster', cursive;
+        text-align: center;
+        font-size: 45px;
+        color: white;
+        background-color: $theme-red;
+        width: 100%;
+    }
 }
 
-.cmu {
-    /*background-color: red*/
-}
-
-.submit {
-    align-content: center;
-}
 
 main {
+    marign: 5px;
+    margin-bottom: 1em;
     text-align: center;
     display: flex;
-}
-
-main section {
-    flex: 50%;
-    text-align: center;
-}
-
-main .form {
-    display: block;
-}
-
-main input {
-    display: block;
-    width: 200px;
-}
-
-main input[type=text] {
-    border: 2px solid red;
-    border-radius: 4px;
+    section {
+        flex: 50%;
+        text-align: center;
+        input[type=text] {
+            border: 2px solid $theme-red;
+            border-radius: 6px;
+        }
+        input[type=number] {
+            border: 2px solid $theme-green;
+            border-radius: 6px;
+        }
+    }
 }
 
 
-
-/*.view {
-    background: url(../img/header_bg.jpeg) center center no-repeat;
-    /*    12 em for the top and bottom padding
-    padding: 12em 1em;
-    text-align: center;
-}*/
-
-.inputarea {
-    align-content: center;
-}
 
 .btn {
     font-size: 1rem;
@@ -194,32 +153,3 @@ main input[type=text] {
 .john {
     background-color: #c2312f;
 }
-
-.fullthing {
-    width: 300px;
-    border-radius: 1em;
-}
-
-/*main input[type=number] {
-    border: 2px solid blue;
-    border-radius: 4px;
-}
-
-main ul {
-    list-style-type: none;
-}
-
-main ul li div {
-    padding-bottom: 10px;
-}
-
-main ul li div a {
-    font-size: 20px;
-}
-
-main ul li div p {
-    margin: 0;
-    font-size: 12;
-}*/
-
-/*# sourceMappingURL=index.css.map */
