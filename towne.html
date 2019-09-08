@@ -20,9 +20,24 @@
             margin: 2px 0;
             box-sizing: border-box;
             border: 2px solid #c2312f;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 200;
             border-radius: 7px;
             outline: none;
-            color : transparent;
+            color: black;
+        }
+
+        input[type=text]:focus {
+            width: 100%;
+            padding: 1px 2px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            border: 2px solid #00B32C;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 200;
+            border-radius: 7px;
+            outline: none;
+            color: black;
         }
 
         input[type=number] {
@@ -31,9 +46,24 @@
             margin: 2px 0;
             box-sizing: border-box;
             border: 2px solid #c2312f;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 200;
             border-radius: 7px;
             outline: none;
-            color : transparent;
+            color: black;
+        }
+
+        input[type=number]:focus {
+            width: 100%;
+            padding: 1px 2px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            border: 2px solid #00B32C;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 200;
+            border-radius: 7px;
+            outline: none;
+            color: black;
         }
 
     </style>
@@ -49,6 +79,8 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="towne.css" />
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
 
 </head>
 <div class="view" id="view">
@@ -81,20 +113,20 @@
                                     <section id="add-target">
                                         <form class="" action="/add" method="POST">
                                             <div class="form">
-                                                <p1>Twitter Handle: </p1><input type="text" name="Twitter-Handle" value="">
+                                                <p1>Twitter Handle </p1><input type="text" name="Twitter-Handle" value="">
                                             </div>
                                             <div class="padd">
                                                 <p> </p>
                                             </div>
                                             <div class="form">
-                                                <p1>Lower Price Range: </p1><input type="number" name="Lower-Price" min="0" value="">
+                                                <p1>Lower Price Range </p1><input type="number" name="Lower-Price" min="0" value="">
                                             </div>
 
                                             <div class="padd">
                                                 <p> </p>
                                             </div>
                                             <div class="form">
-                                                <p1>Upper Price Range: </p1><input type="number" name="Upper-Price" min="0" value="">
+                                                <p1>Upper Price Range </p1><input type="number" name="Upper-Price" min="0" value="">
                                             </div>
                                             <div class="padd">
                                                 <p> </p>
