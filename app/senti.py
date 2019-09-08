@@ -93,6 +93,7 @@ def caculate_keyword_vector(tweets, keywords):
                 word[0]: 0.5 * b * (a + 1) * ((math.exp(k) - 1) / (1 + math.exp(k)))
             }
         )
+    return v
 
 
 def price_weighting(s: float, price: float, p_min: float, p_max: float):

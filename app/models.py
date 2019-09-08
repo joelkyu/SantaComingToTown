@@ -21,13 +21,14 @@ class Person(db.Model):
         self.keywords = []
         for tweet in self.tweets:
             self.keywords.append(senti.extract_positives(senti.senti_analysis(tweet)))
-        self.kv = senti.caculate_keyword_vector(self.tweets, self.keywords)
+        self.kv = senti.caculate_keyword_vector(self.tweets, self.keywords[0])
+
 
     def compatibility(self, compare_title, compare_price):
         self.load_user_sentiment()
         strength_sum = []
         for i in range(len(self.keywords[0])):
-            if self.keywords[0][i][0] in compare_title:
+            if self.keywords[0][i][0].lower() in compare_title.lower():
                 strength_sum.append(senti.price_weighting(self.kv[i], compare_price,
                 self.lower_price, self.upper_price))
         if len(strength_sum) == 0:
