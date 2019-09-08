@@ -20,7 +20,8 @@
                 "https://www.amazon.ca/*"
             ],
             "js": [
-                "scripts.js"
+                "js/scripts.js",
+                "js/updateFollowers.js"
             ],
             "css": [
                 "highlightItems.css"

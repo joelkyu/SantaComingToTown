@@ -16,4 +16,8 @@
 
     return itemArray;
 
+    // Add event listener into submit form
+    $("#new-person-submit").addEventListener(function(e) {
+        handleClick();
+    })
 })();
