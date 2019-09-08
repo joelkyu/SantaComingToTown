@@ -84,7 +84,9 @@ def extract_k(tweets, text):
 
 def caculate_keyword_vector(tweets, keywords):
     v = []
-    for word in keywords[0]:
+
+    for word in keywords:
+
         k = extract_k(tweets, word[0])
         a = word[1]
         b = word[2]
@@ -97,11 +99,12 @@ def caculate_keyword_vector(tweets, keywords):
 
 
 def price_weighting(s: float, price: float, p_min: float, p_max: float):
+    price = float(price) 
     u_diff = p_max - price
     l_diff = price - p_min
     if u_diff < 0:
-        return 0 if s - 0.05(u_diff)**2 < 0 else s - 0.05(u_diff)**2
+        return 0 if s - 0.05*(u_diff)**2 < 0 else s - 0.05*(u_diff)**2 
     elif l_diff < 0:
-        return 0 if s - 0.05(l_diff)**2 < 0 else s - 0.05(l_diff)**2
+        return 0 if s - 0.05*(l_diff)**2 < 0 else s - 0.05*(l_diff)**2 
     else:
         return s

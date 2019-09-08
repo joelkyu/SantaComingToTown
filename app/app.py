@@ -17,8 +17,8 @@ def index():
 @app.route('/add', methods=['POST'])
 def add_person():
     db.create_all()
-    lp = request.headers['Lower-Price']
-    hp = request.headers['Upper-Price']
+    lp = float(request.headers['Lower-Price'])
+    hp = float(request.headers['Upper-Price'])
     if hp < lp:
         lp, hp = hp, lp  # switch variables if user inputs wrong price bracket.
     p = Person(twitter=request.headers['Twitter-Handle'], lower_price=lp, upper_price=hp)

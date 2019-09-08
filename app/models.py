@@ -29,10 +29,11 @@ class Person(db.Model):
         strength_sum = []
         for i in range(len(self.keywords[0])):
             if self.keywords[0][i][0].lower() in compare_title.lower():
-                strength_sum.append(senti.price_weighting(self.kv[i], compare_price,
+                strength_sum.append(senti.price_weighting(list(self.kv[i].values())[0], compare_price,
                 self.lower_price, self.upper_price))
         if len(strength_sum) == 0:
             return 0
+        print(strength_sum)
         return sum(strength_sum) / len(strength_sum)
 
     def deserialize(self):
