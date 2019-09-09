@@ -1,2 +1,2 @@
-# SantaComingToTown
-A web application that utilizes APIs to analyze a user's social media to determine an ideal gift. 
+# Santa!
+A chrome extension that helps users find gifts for friends and family based on public social media postings. 
