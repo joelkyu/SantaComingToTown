@@ -52,7 +52,6 @@ function compare(user_id, name, price) {
     fetch(`http://52.54.115.82:8080/compare/${user_id}`, {
         method: "GET",
         headers: {
-            "accept": 'application/json',
             'name': name,
             'price': price
         }

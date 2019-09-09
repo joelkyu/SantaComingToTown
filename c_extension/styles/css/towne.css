@@ -64,6 +64,8 @@ main {
   /*    the size of button*/
   padding: 1em 2em;
   color: white;
+  height: 25px;
+  width: 135px;
   background: #c2312f;
   border: none; }
 
