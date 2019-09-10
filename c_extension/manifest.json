@@ -4,7 +4,7 @@
     "description": "A web application that utilizes APIs to analyze a user's social media to determine an ideal gift.",
     "version": "0.3",
     "browser_action": {
-        "default_popup": "towne.html",
+        "default_popup": "index.html",
         "default_icon": "assets/images/presentv3.png"
     },
     "permissions": [

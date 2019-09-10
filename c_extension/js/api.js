@@ -25,7 +25,9 @@ function add_person(twitter_handle, lower_price, upper_price) {
         method: "POST",
         headers: {
             "accept": 'application/json',
-            twitter_handle, lower_price, upper_price
+            "Twitter-Handle": twitter_handle,
+            "Lower-Price": lower_price,
+            "Upper-Price": upper_price
         }
     })
     .then(
